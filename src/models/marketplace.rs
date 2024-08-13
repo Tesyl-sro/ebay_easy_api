@@ -1,10 +1,13 @@
 use crate::ReadOnlyString;
+use enum_iterator::Sequence;
 use serde::Deserialize;
 use std::{fmt::Display, str::FromStr};
 use thiserror::Error;
 
 /// An Ebay marketplace ID.
-#[derive(Debug, Clone, Deserialize, Copy, Default, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[derive(
+    Debug, Clone, Deserialize, Sequence, Copy, Default, PartialEq, Eq, PartialOrd, Ord, Hash,
+)]
 pub enum Marketplace {
     #[default]
     #[serde(rename = "EBAY_US")]
@@ -49,6 +52,19 @@ impl Marketplace {
             Self::Singapore => "EBAY_SG",
             Self::UnitedKingdom => "EBAY_UK",
             Self::France => "EBAY_FR",
+        }
+    }
+
+    #[must_use]
+    pub const fn name(self) -> &'static str {
+        match self {
+            Self::UnitedStates => "United States",
+            Self::Germany => "Germany",
+            Self::Italy => "Italy",
+            Self::Ireland => "Ireland",
+            Self::Singapore => "Singapore",
+            Self::UnitedKingdom => "United Kingdom",
+            Self::France => "France",
         }
     }
 }
