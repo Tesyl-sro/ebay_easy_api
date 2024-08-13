@@ -17,7 +17,7 @@ fn bad_token() {
     assert_eq!(api_err.category.as_ref(), "REQUEST");
     assert_eq!(api_err.message.as_ref(), "Invalid access token");
     assert_eq!(
-        api_err.long_message.as_ref(),
-        "Invalid access token. Check the value of the Authorization HTTP request header."
+        api_err.long_message.as_deref(),
+        Some("Invalid access token. Check the value of the Authorization HTTP request header.")
     );
 }

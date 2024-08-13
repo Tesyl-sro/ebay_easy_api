@@ -49,7 +49,7 @@ pub struct ApiError {
 
     /// Loger error message.
     #[serde(rename = "longMessage")]
-    pub long_message: ReadOnlyString,
+    pub long_message: Option<ReadOnlyString>,
 
     /// Status code.
     #[serde(skip)]
