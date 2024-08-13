@@ -51,6 +51,11 @@ impl Price {
     pub fn as_f64(&self) -> f64 {
         self.value.to_f64().expect("cannot convert to f64")
     }
+
+    /// Returns the decimal value as a string.
+    pub fn str_value(&self) -> String {
+        self.value.to_string()
+    }
 }
 
 impl Display for Price {
