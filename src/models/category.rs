@@ -17,6 +17,7 @@ pub struct Category {
     pub name: ReadOnlyString,
 }
 
+/// A list of categories.
 #[derive(Debug, Clone, Deserialize, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct CategoryPath(ReadOnlyVec<ReadOnlyString>);
 
