@@ -1,5 +1,5 @@
 use crate::ReadOnlyString;
-use enum_iterator::Sequence;
+use enum_iterator::{all, Sequence};
 use serde::Deserialize;
 use std::{fmt::Display, str::FromStr};
 use thiserror::Error;
@@ -123,17 +123,9 @@ impl FromStr for Marketplace {
     type Err = InvalidMarketplace;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        const VARIANTS: [Marketplace; 7] = [
-            Marketplace::UnitedStates,
-            Marketplace::Germany,
-            Marketplace::Italy,
-            Marketplace::Ireland,
-            Marketplace::Singapore,
-            Marketplace::UnitedKingdom,
-            Marketplace::France,
-        ];
+        let variants = all::<Self>();
 
-        for variant in VARIANTS {
+        for variant in variants {
             if s == variant.as_str() {
                 return Ok(variant);
             }
