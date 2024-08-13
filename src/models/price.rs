@@ -53,6 +53,7 @@ impl Price {
     }
 
     /// Returns the decimal value as a string.
+    #[must_use]
     pub fn str_value(&self) -> String {
         self.value.to_string()
     }

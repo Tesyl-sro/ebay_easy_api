@@ -61,11 +61,13 @@ pub struct ApiError {
 }
 
 impl Error {
-    pub fn status_code(&self) -> Option<StatusCode> {
-        match self {
-            Self::Api(error) => Some(error.status_code),
-            _ => None,
+    #[must_use]
+    pub const fn status_code(&self) -> Option<StatusCode> {
+        if let Self::Api(error) = self {
+            return Some(error.status_code);
         }
+
+        None
     }
 }
 
@@ -86,7 +88,7 @@ impl TryFrom<Response> for ApiError {
         match first {
             None => Err(Self::Error::NoErr),
             Some(value) => {
-                let mut error: ApiError = serde_json::from_value(value)?;
+                let mut error: Self = serde_json::from_value(value)?;
 
                 error.status_code = status;
 
