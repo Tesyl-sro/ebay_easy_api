@@ -2,7 +2,7 @@ use derive_more::Display;
 use rust_decimal::{prelude::ToPrimitive, Decimal};
 use serde::Deserialize;
 use serde_with::{serde_as, DisplayFromStr};
-use std::{fmt::Display, ops::Deref};
+use std::ops::Deref;
 
 /// A fixed-precision decimal number representation of a price value.
 ///
@@ -22,13 +22,13 @@ pub struct Price {
 /// A currency type.
 #[derive(Debug, Deserialize, Display, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub enum Currency {
-    #[display(fmt = "€")]
+    #[display("€")]
     #[serde(rename = "EUR")]
     Euro,
-    #[display(fmt = "$")]
+    #[display("$")]
     #[serde(rename = "USD")]
     UsDollar,
-    #[display(fmt = "HUF")]
+    #[display("HUF")]
     #[serde(rename = "HUF")]
     Forint,
 }

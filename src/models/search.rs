@@ -84,7 +84,7 @@ pub struct SearchItem {
     /// Marketplace where listing was posted.
     /// This should match whatever marketplace [`EbayApiClient`](crate::EbayApiClient) is using (or used when this item was obtained).
     #[serde(rename = "listingMarketplaceId")]
-    pub listing_marketplace_id: Marketplace,
+    pub listing_marketplace_id: Option<Marketplace>,
 }
 
 impl SearchResults {
