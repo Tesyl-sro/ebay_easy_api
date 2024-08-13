@@ -28,6 +28,10 @@ pub enum Error {
     /// API error.
     #[error("From API arror: {0}")]
     Api(#[from] ApiError),
+
+    /// Provided limit was too high.
+    #[error("Limit is too high, expected up to {0}")]
+    Limit(usize),
 }
 
 /// An API error.

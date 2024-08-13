@@ -1,5 +1,5 @@
 use crate::{
-    error::{handle_response_error, Result},
+    error::{handle_response_error, Error, Result},
     models::{Item, SearchResults},
     utils::Jsonify,
     EbayApiClient,
@@ -8,6 +8,8 @@ use reqwest::{Method, StatusCode};
 
 const SEARCH_ENDPOINT: &str = "buy/browse/v1/item_summary/search";
 const ITEM_SEARCH_ENDPOINT: &str = "buy/browse/v1/item/";
+
+const SEARCH_API_LIMIT: usize = 200;
 
 /// A Browser API client.
 ///
@@ -45,6 +47,10 @@ impl<'c> Browser<'c> {
     /// assert!(results.unwrap().len() <= limit);
     /// ```
     pub fn search<S: AsRef<str>>(&self, query: S, limit: usize) -> Result<SearchResults> {
+        if limit > SEARCH_API_LIMIT {
+            return Err(Error::Limit(SEARCH_API_LIMIT));
+        }
+
         let limit_as_str = limit.to_string();
         let query = [("q", query.as_ref()), ("limit", limit_as_str.as_str())];
 
