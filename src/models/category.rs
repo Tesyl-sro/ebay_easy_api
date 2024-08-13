@@ -1,8 +1,7 @@
-use std::{convert::Infallible, fmt::Display, str::FromStr};
-
 use crate::{ReadOnlyString, ReadOnlyVec};
 use serde::Deserialize;
 use serde_with::{serde_as, DisplayFromStr};
+use std::{convert::Infallible, fmt::Display, ops::Deref, str::FromStr};
 
 /// A category.
 #[serde_as]
@@ -41,5 +40,13 @@ impl Display for CategoryPath {
         }
 
         Ok(())
+    }
+}
+
+impl Deref for CategoryPath {
+    type Target = [ReadOnlyString];
+
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
