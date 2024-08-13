@@ -89,7 +89,7 @@ pub struct Item {
 
     /// Lot size.
     #[serde(rename = "lotSize")]
-    pub lot_size: u32,
+    pub lot_size: Option<u32>,
 
     // legacyItemId
     /// Priority listing.
