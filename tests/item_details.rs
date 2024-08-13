@@ -9,7 +9,7 @@ fn item_details() {
     let browser = client.search();
     let results = browser.search("gaming pc", 2).unwrap();
 
-    let first = results.iter().next().unwrap();
+    let first = &results[0];
     let details = browser.find_item(&first.id).unwrap();
 
     assert!(details.is_some());

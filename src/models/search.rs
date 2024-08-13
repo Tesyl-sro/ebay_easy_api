@@ -1,3 +1,5 @@
+use std::ops::Index;
+
 use super::{
     category::Category, image::Image, marketplace::Marketplace, price::Price, seller::Seller,
     Location,
@@ -112,5 +114,13 @@ impl<'a> IntoIterator for &'a SearchResults {
 
     fn into_iter(self) -> Self::IntoIter {
         self.items.iter()
+    }
+}
+
+impl Index<usize> for SearchResults {
+    type Output = SearchItem;
+
+    fn index(&self, index: usize) -> &Self::Output {
+        &self.items[index]
     }
 }
