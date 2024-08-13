@@ -5,6 +5,7 @@ use serde::Deserialize;
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Deserialize)]
 pub struct Location {
     /// Postal code.
+    /// Some API calls dont provide this.
     #[serde(rename = "postalCode")]
     pub post_code: Option<ReadOnlyString>,
 
