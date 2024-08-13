@@ -20,7 +20,7 @@ pub enum Marketplace {
     Ireland,
     #[serde(rename = "EBAY_SG")]
     Singapore,
-    #[serde(rename = "EBAY_UK")]
+    #[serde(rename = "EBAY_GB")]
     UnitedKingdom,
     #[serde(rename = "EBAY_FR")]
     France,
