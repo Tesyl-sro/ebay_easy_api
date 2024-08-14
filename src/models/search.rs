@@ -38,7 +38,7 @@ pub struct SearchItem {
     /// Product categories.
     pub categories: ReadOnlyVec<Category>,
     /// Product image.
-    pub image: Image,
+    pub image: Option<Image>,
     /// Product price.
     pub price: Price,
 
