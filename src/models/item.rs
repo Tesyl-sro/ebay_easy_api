@@ -17,6 +17,7 @@ pub struct Item {
     /// Seller item revision.
     #[serde(rename = "sellerItemRevision")]
     #[serde_as(as = "DisplayFromStr")]
+    #[serde(default)]
     pub revision: u8,
 
     /// Title.
