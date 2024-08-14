@@ -18,7 +18,7 @@ pub struct Seller {
 
     /// Feedback score.
     #[serde(rename = "feedbackScore")]
-    pub feedback_score: u32,
+    pub feedback_score: i32,
 }
 
 impl Display for Seller {
