@@ -49,7 +49,7 @@ pub struct SearchItem {
     /// Basic seller information.
     pub seller: Seller,
     /// Product condition.
-    pub condition: ReadOnlyString,
+    pub condition: Option<ReadOnlyString>,
     // conditionId
     // thumbnailImages
     // shippingOptions
