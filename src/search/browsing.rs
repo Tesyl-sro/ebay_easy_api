@@ -111,4 +111,18 @@ impl<'c> Browser<'c> {
             }
         }
     }
+
+    pub fn paginate(&self, results: SearchResults) -> Result<Option<SearchResults>> {
+        let Some(next_url) = results.next else {
+            return Ok(None);
+        };
+
+        let builder = self.0.request_builder_with_url(Method::GET, next_url);
+        let response = builder.send()?;
+
+        let response = handle_response_error(response)?;
+        let response = response.jsonify::<SearchResults>()?;
+
+        Ok(Some(response))
+    }
 }

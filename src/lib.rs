@@ -126,8 +126,12 @@ impl EbayApiClient {
     }
 
     fn request_builder<S: AsRef<str>>(&self, method: Method, endpoint: S) -> RequestBuilder {
+        self.request_builder_with_url(method, format!("{BASE_URL}{}", endpoint.as_ref()))
+    }
+
+    fn request_builder_with_url<S: AsRef<str>>(&self, method: Method, url: S) -> RequestBuilder {
         self.client
-            .request(method, format!("{BASE_URL}{}", endpoint.as_ref()))
+            .request(method, url.as_ref())
             .header("X-EBAY-C-MARKETPLACE-ID", self.marketplace.as_str())
             .bearer_auth(&self.token)
     }
