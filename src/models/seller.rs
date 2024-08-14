@@ -16,7 +16,7 @@ pub struct Seller {
     #[serde(rename = "feedbackPercentage")]
     pub feedback_percentage: Decimal,
 
-    /// Feedback score.
+    /// Feedback score. This can sometimes be `-1`.
     #[serde(rename = "feedbackScore")]
     pub feedback_score: i32,
 }
