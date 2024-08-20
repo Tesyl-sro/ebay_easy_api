@@ -16,7 +16,7 @@ pub enum Marketplace {
     Germany,
     #[serde(rename = "EBAY_IT")]
     Italy,
-    #[serde(rename = "EBAY_IR")]
+    #[serde(rename = "EBAY_IE")]
     Ireland,
     #[serde(rename = "EBAY_SG")]
     Singapore,
@@ -74,7 +74,7 @@ impl Marketplace {
             Self::UnitedStates => "EBAY_US",
             Self::Germany => "EBAY_DE",
             Self::Italy => "EBAY_IT",
-            Self::Ireland => "EBAY_IR",
+            Self::Ireland => "EBAY_IE",
             Self::Singapore => "EBAY_SG",
             Self::UnitedKingdom => "EBAY_UK",
             Self::France => "EBAY_FR",
