@@ -31,6 +31,9 @@ pub enum Currency {
     #[display("HUF")]
     #[serde(rename = "HUF")]
     Forint,
+    #[display("GBP")]
+    #[serde(rename = "GBP")]
+    BritishPound,
 }
 
 impl Price {
