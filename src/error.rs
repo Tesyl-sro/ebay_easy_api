@@ -26,7 +26,7 @@ pub enum Error {
     NoErr,
 
     /// API error.
-    #[error("From API arror: {0}")]
+    #[error("From API error: {0}")]
     Api(#[from] ApiError),
 
     /// Provided limit was too high.
