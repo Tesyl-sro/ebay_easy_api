@@ -1,5 +1,3 @@
-use std::ops::Index;
-
 use super::{
     category::Category, image::Image, marketplace::Marketplace, price::Price, seller::Seller,
     Location,
@@ -7,6 +5,7 @@ use super::{
 use crate::{ReadOnlyString, ReadOnlyVec};
 use chrono::Utc;
 use serde::Deserialize;
+use std::ops::Index;
 
 /// Search results from [`Browser::search()`](crate::search::Browser::search).
 #[derive(Debug, Deserialize, Clone, PartialEq, Eq, PartialOrd, Ord)]
