@@ -94,7 +94,7 @@ impl Marketplace {
     }
 
     #[must_use]
-    pub const fn name(self) -> &'static str {
+    pub const fn country(self) -> &'static str {
         match self {
             Self::UnitedStates => "United States",
             Self::Germany => "Germany",
