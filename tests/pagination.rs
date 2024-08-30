@@ -1,10 +1,9 @@
-use ebay_easy_api::{models::Marketplace, EbayApiClient};
+use ebay_easy_api::{models::Marketplace, Client};
 use std::env::var;
 
 #[test]
 fn pagination() {
-    let client =
-        EbayApiClient::new_unchecked(var("EBAY_TOKEN").unwrap(), Marketplace::UnitedStates);
+    let client = Client::new_unchecked(var("EBAY_TOKEN").unwrap(), Marketplace::UnitedStates);
 
     let browser = client.search();
     let results = browser.search("omron plc", 10).unwrap();

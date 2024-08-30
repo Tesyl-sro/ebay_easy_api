@@ -3,7 +3,7 @@
 use error::{handle_response_error, Result};
 use models::Marketplace;
 use reqwest::{
-    blocking::{Client, ClientBuilder, RequestBuilder},
+    blocking::{ClientBuilder, RequestBuilder},
     Method,
 };
 use search::Browser;
@@ -24,13 +24,13 @@ pub type ReadOnlyVec<T> = Box<[T]>;
 const BASE_URL: &str = "https://api.ebay.com/";
 
 /// A synchronous (blocking) API client.
-pub struct EbayApiClient {
-    client: Client,
+pub struct Client {
+    client: reqwest::blocking::Client,
     token: ReadOnlyString,
     marketplace: Marketplace,
 }
 
-impl EbayApiClient {
+impl Client {
     /// Creates a new client instance using the given OAuth token and marketplace.
     ///
     /// This method will perform a test request, to make sure that the provided token is valid.

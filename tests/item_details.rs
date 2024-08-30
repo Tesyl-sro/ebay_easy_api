@@ -1,10 +1,10 @@
-use ebay_easy_api::{models::Marketplace, EbayApiClient};
+use ebay_easy_api::{models::Marketplace, Client};
 use std::env::var;
 
 #[test]
 fn item_details() {
     let client =
-        EbayApiClient::new_unchecked(var("EBAY_TOKEN").unwrap(), Marketplace::UnitedStates);
+        Client::new_unchecked(var("EBAY_TOKEN").unwrap(), Marketplace::UnitedStates);
 
     let browser = client.search();
     let results = browser.search("gaming pc", 2).unwrap();

@@ -2,7 +2,7 @@ use crate::{
     error::{handle_response_error, Error, Result},
     models::{Item, SearchResults},
     utils::Jsonify,
-    EbayApiClient,
+    Client,
 };
 use reqwest::{Method, StatusCode};
 
@@ -15,7 +15,7 @@ const SEARCH_API_LIMIT: usize = 200;
 ///
 /// This structure references an instance of [`EbayApiClient`](EbayApiClient), so
 /// it can only be used as long as the referenced [`EbayApiClient`](EbayApiClient) lives.
-pub struct Browser<'c>(pub(crate) &'c EbayApiClient);
+pub struct Browser<'c>(pub(crate) &'c Client);
 
 impl<'c> Browser<'c> {
     /// Perform a search using the given query string and return up to `limit` results.

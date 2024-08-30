@@ -1,8 +1,8 @@
-use ebay_easy_api::{error::Error, models::Marketplace, EbayApiClient};
+use ebay_easy_api::{error::Error, models::Marketplace, Client};
 
 #[test]
 fn bad_token() {
-    let client = EbayApiClient::new("0", Marketplace::UnitedStates);
+    let client = Client::new("0", Marketplace::UnitedStates);
 
     let Err(error) = client else {
         panic!("Did not get an error");
