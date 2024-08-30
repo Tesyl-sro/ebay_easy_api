@@ -112,6 +112,11 @@ impl<'c> Browser<'c> {
         }
     }
 
+    /// Iterates to the next page of search results.
+    /// If the current result set is the last page, `Ok(None)` is returned.
+    ///
+    /// # Errors
+    /// This can return an error if the request fails or the response body could not be deserialized.
     pub fn paginate(&self, results: SearchResults) -> Result<Option<SearchResults>> {
         let Some(next_url) = results.next else {
             return Ok(None);

@@ -61,6 +61,8 @@ pub struct ApiError {
 }
 
 impl Error {
+    /// Returns the status code given by Ebay's API.
+    /// If the error is not an API error, `None` is returned.
     #[must_use]
     pub const fn status_code(&self) -> Option<StatusCode> {
         if let Self::Api(error) = self {
