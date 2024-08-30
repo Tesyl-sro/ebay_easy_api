@@ -93,6 +93,16 @@ impl Marketplace {
         }
     }
 
+    /// Returns the Marketplace country name.
+    ///
+    /// # Example
+    /// ```rust
+    /// use ebay_easy_api::models::Marketplace;
+    ///
+    /// assert_eq!(Marketplace::UnitedStates.as_str(), "United States");
+    /// assert_eq!(Marketplace::Germany.as_str(), "Germany");
+    /// // ...
+    /// ```
     #[must_use]
     pub const fn country(self) -> &'static str {
         match self {
