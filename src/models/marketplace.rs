@@ -120,7 +120,7 @@ impl Marketplace {
             Self::Spain => "Spain",
             Self::Switzerland => "Switzerland",
             Self::Netherlands => "Netherlands",
-            Self::HongKong => "Hong",
+            Self::HongKong => "Hong Kong",
             Self::India => "India",
             Self::Malaysia => "Malaysia",
             Self::Philippines => "Philippines",
