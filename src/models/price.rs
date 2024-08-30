@@ -28,10 +28,10 @@ pub enum Currency {
     #[display("$")]
     #[serde(rename = "USD")]
     UsDollar,
-    #[display("HUF")]
+    #[display("Ft")]
     #[serde(rename = "HUF")]
     Forint,
-    #[display("GBP")]
+    #[display("£")]
     #[serde(rename = "GBP")]
     BritishPound,
 }
