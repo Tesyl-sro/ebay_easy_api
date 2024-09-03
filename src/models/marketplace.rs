@@ -9,45 +9,82 @@ use thiserror::Error;
     Debug, Clone, Deserialize, Sequence, Copy, Default, PartialEq, Eq, PartialOrd, Ord, Hash,
 )]
 pub enum Marketplace {
+    /// ID code: *EBAY_US*
     #[default]
     #[serde(rename = "EBAY_US")]
     UnitedStates,
+
+    /// ID code: *EBAY_DE*
     #[serde(rename = "EBAY_DE")]
     Germany,
+
+    /// ID code: *EBAY_IT*
     #[serde(rename = "EBAY_IT")]
     Italy,
+
+    /// ID code: *EBAY_IE*
     #[serde(rename = "EBAY_IE")]
     Ireland,
+
+    /// ID code: *EBAY_SG*
     #[serde(rename = "EBAY_SG")]
     Singapore,
+
+    /// ID code: *EBAY_GB*
     #[serde(rename = "EBAY_GB")]
     UnitedKingdom,
+
+    /// ID code: *EBAY_FR*
     #[serde(rename = "EBAY_FR")]
     France,
+
+    /// ID code: *EBAY_CA*
     // Could be 210 (French) or 2 (English)
     #[serde(rename = "EBAY_CA")]
     Canada,
+
+    /// ID code: *EBAY_AU*
     #[serde(rename = "EBAY_AU")]
     Australia,
+
+    /// ID code: *EBAY_AT*
     #[serde(rename = "EBAY_AT")]
     Austria,
+
+    /// ID code: *EBAY_BE*
     // Could be 123 (Dutch) or 23 (French)
     #[serde(rename = "EBAY_BE")]
     Belgium,
+
+    /// ID code: *EBAY_ES*
     #[serde(rename = "EBAY_ES")]
     Spain,
+
+    /// ID code: *EBAY_CH*
     #[serde(rename = "EBAY_CH")]
     Switzerland,
+
+    /// ID code: *EBAY_NL*
     #[serde(rename = "EBAY_NL")]
     Netherlands,
+
+    /// ID code: *EBAY_HK*
     #[serde(rename = "EBAY_HK")]
     HongKong,
+
+    /// ID code: *EBAY_IN*
     #[serde(rename = "EBAY_IN")]
     India,
+
+    /// ID code: *EBAY_MY*
     #[serde(rename = "EBAY_MY")]
     Malaysia,
+
+    /// ID code: *EBAY_PH*
     #[serde(rename = "EBAY_PH")]
     Philippines,
+
+    /// ID code: *EBAY_PL*
     #[serde(rename = "EBAY_PL")]
     Poland,
 }
