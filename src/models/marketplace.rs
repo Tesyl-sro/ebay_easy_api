@@ -8,6 +8,7 @@ use thiserror::Error;
 #[derive(
     Debug, Clone, Deserialize, Sequence, Copy, Default, PartialEq, Eq, PartialOrd, Ord, Hash,
 )]
+#[allow(clippy::doc_markdown)]
 pub enum Marketplace {
     /// ID code: *EBAY_US*
     #[default]

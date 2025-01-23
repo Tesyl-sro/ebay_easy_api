@@ -17,7 +17,7 @@ const SEARCH_API_LIMIT: usize = 200;
 /// it can only be used as long as the referenced [`EbayApiClient`](EbayApiClient) lives.
 pub struct Browser<'c>(pub(crate) &'c Client);
 
-impl<'c> Browser<'c> {
+impl Browser<'_> {
     /// Perform a search using the given query string and return up to `limit` results.
     ///
     /// # Errors
