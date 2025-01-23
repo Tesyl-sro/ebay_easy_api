@@ -1,0 +1,9 @@
+(function() {
+    var implementors = Object.fromEntries([["ebay_easy_api",[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.84.0/core/str/traits/trait.FromStr.html\" title=\"trait core::str::traits::FromStr\">FromStr</a> for <a class=\"enum\" href=\"ebay_easy_api/models/enum.Marketplace.html\" title=\"enum ebay_easy_api::models::Marketplace\">Marketplace</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.84.0/core/str/traits/trait.FromStr.html\" title=\"trait core::str::traits::FromStr\">FromStr</a> for <a class=\"struct\" href=\"ebay_easy_api/models/struct.CategoryPath.html\" title=\"struct ebay_easy_api::models::CategoryPath\">CategoryPath</a>"]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[628]}
